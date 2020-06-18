@@ -12,6 +12,8 @@ socketio = SocketIO(app)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 messages = {}
+channelList = []
+
 
 @app.route("/")
 @name_required
@@ -19,7 +21,7 @@ def index():
     if session["user_id"] == None:
         return redirect("/getName")
     else:
-        return render_template("index.html")
+        return render_template("index.html", channels = channelList)
 
 @app.route("/getName", methods=["GET", "POST"])
 def userName():
@@ -37,12 +39,17 @@ def userName():
     else:
         return render_template("getName.html")
 
+@socketio.on("submit group")
+def group(data):
+    if data["group"] != "":
+        channelList.append(data["group"])
+        messages.update(data["group"])
+        emit("channels", channelList, broadcast=True)
 
-
-
-
-
-
+@socketio.on("messages")
+def mess(data):
+    message = messages[data["selection"]]
+    emit("message", message, broadcast=True)
 
 
 

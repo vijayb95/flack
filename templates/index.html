@@ -1,12 +1,34 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Search for a Book
+    Welcome to Flack!
 {% endblock %}
 
-
+{% block left %}
+    <div class="left">
+        <ul  id="chnl">
+            {% for channel in channels %}
+                <li>
+                    <button>{{ channel }}</button>
+                </li>
+            {% endfor %}
+        </ul>
+    
+        <form>
+            <h5>Create a New group</h5>
+            <div class="form-group">
+                <input autocomplete="off" autofocus="" id="groupName" class="form-control" placeholder="Typer your group name" type="text">
+            </div>
+            <button id="create" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+{% endblock %}
 {% block main %}
-    <main class="container p-5">
-        
-    </main>
+    <div id="messages">
+        <ul  id="msg">
+        </ul>
+    </div>
+    <div class="form-group" id="textBox">
+        <input autocomplete="off" autofocus="" id="groupName" class="form-control" placeholder="Typer your group name" type="text">
+    </div>
 {% endblock %}

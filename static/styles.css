@@ -3,6 +3,33 @@ nav .navbar-brand
     /* size for brand */
     font-size: xx-large;
 }
+.left {
+    padding: 1.5%;
+    width: 20%;
+    text-align: left;
+    border: 1px solid;
+  }
+#messages { 
+    margin:4px, 4px; 
+    padding:4px; 
+    background-color: lightcoral; 
+    width: 500px; 
+    height: 110px; 
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    text-align:justify; 
+}
+
+#textBox {
+    margin:4px, 4px; 
+    padding:4px; 
+    background-color: lightgrey; 
+    width: 500px; 
+    height: 110px; 
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    text-align:justify;
+}
 
 body {
   background-color: #edebeb;
@@ -40,7 +67,7 @@ main
 {
     /* scroll horizontally as needed */
     overflow-x: auto;
-
+    padding: 1%;
     /* center contents */
     text-align: center;
 }
