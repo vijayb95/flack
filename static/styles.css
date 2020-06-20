@@ -9,7 +9,7 @@ nav .navbar-brand
     text-align: left;
     border: 1px solid;
   }
-#messages { 
+/* #messages { 
     margin:4px, 4px; 
     padding:4px; 
     background-color: lightcoral; 
@@ -18,7 +18,7 @@ nav .navbar-brand
     overflow-x: hidden; 
     overflow-y: auto; 
     text-align:justify; 
-}
+} */
 
 #textBox {
     margin:4px, 4px; 
@@ -76,4 +76,24 @@ main img
 {
     /* constrain images on small screens */
     max-width: 100%;
+}
+
+.container-channel {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20rem 100px;
+}
+
+/* ID */
+
+#message-box, #file-selector {
+    align-self: center;
+}
+
+#message-box {
+    margin: 30px 20px 10px 30px;
+}
+
+#chat {
+    padding: 20px;
 }
